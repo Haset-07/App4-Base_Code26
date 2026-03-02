@@ -38,18 +38,18 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <script>
 
-        var ibs_count = 0;
-        var upset_count = 0;
+        var ibs_count = 0; //variable that establishes ibs count
+        var upset_count = 0; //variable that establishes upset stomach count
 
 
         function ibsAdd(){
             ibs_count = ibs_count + 1;
-		alert(ibs_count);
+		alert(ibs_count); //how to + 1 to ibs_count
 
         }
 
         function upsetAdd(){
-            upset_count = upset_count + 1;
+            upset_count = upset_count + 1; //how to + 1 to upset_count
         }
 		function showresults (){ //function i used to show results at end of questions
 			var total= ibs_count + upset_count; // total adds up the counts for IBS and upset stomach
@@ -97,18 +97,18 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<!-- HERE IS WHERE ALL OF YOUR HTML PAGES GO -->
 	<div id="header" class="w3-container w3-flat-carrot">
-	<h1>IBS or an Upset Stomach?</h1>
+	<h1>IBS or an Upset Stomach?</h1> <!--new header, tells user what page will determine-->
 </div>
 	
 <div id="content" class="w3-container">
-	<p>Have you been experiencing stomach problems and wonder if its Irritable Bowel Syndrome? Answer a few short questions to find out!</p>
+	<p>Have you been experiencing stomach problems and wonder if its Irritable Bowel Syndrome? Answer a few short questions to find out!</p> <!--explains what page is-->
 	
-	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a> <!--button that moves to next page-->
 	
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
-	<img src="IBSIMAGE.jpg" alt="ibsimage">
+	<img src="IBSIMAGE.png" alt="ibsimage">
 </div> <!-- adding this because it seems to be missing????? -->
 <div class="page" id="one"> <!--setting up page 1 and giving it ID -->
 	<div id="header" class="w3-container w3-flat-carrot">
