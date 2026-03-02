@@ -53,9 +53,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
             upset_count = upset_count + 1;
         }
 		function showresults (){ //function i used to show results at end of questions
-			var total= ibs_count + upset_count; // total adds up the counts for cold and allergy
-			var ibspercentage = (ibs_count/total) * 100; //allergypercentage is the allergy count divided by total times 100, showing the % chance  you have allergies
-			var upsetpercentage = (upset_count/total) * 100;// coldpercentage is the same except it's for colds.
+			var total= ibs_count + upset_count; // total adds up the counts for IBS and upset stomach
+			var ibspercentage = (ibs_count/total) * 100; //allergypercentage is the IBS count divided by total times 100, showing the % chance  you have IBS
+			var upsetpercentage = (upset_count/total) * 100;// upsetpercentage is the same except it's for upset stomach.
 
 			var resultText = document.getElementById("resultText"); // looks for whatever resultText is
 			resultText.innerHTML = "Probability it is Irritable Bowel Syndrome =" + ibspercentage + "%" + "<br> Probability it is an upset stomach =" + upsetpercentage + "%"; //establishes what resultText is
@@ -98,7 +98,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 </div>
 	
 <div id="content" class="w3-container">
-	<p>Have you been experiencing stomach problems and want see if there's an underlying issue? Answer a few short questions to find out!</p>
+	<p>Have you been experiencing stomach problems and wonder if its Irritable Bowel Syndrome? Answer a few short questions to find out!</p>
 	
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
 	
@@ -114,8 +114,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     	<div id="content" class="w3-container">
         <p>Have you had stomach issues frequently?/p>     <!--first question-->
 			
-			<a href="#two" onclick="ibsAdd();" class="w3-btn w3-black"> Yes </a> <!-- yes button (+1 allergy)-->
-			<a href="#two" onclick="upsetAdd();" class="w3-btn w3-black"> No </a> <!-- no button (+1 cold)-->
+			<a href="#two" onclick="ibsAdd();" class="w3-btn w3-black"> Yes </a> <!-- yes button (+1 IBS)-->
+			<a href="#two" onclick="upsetAdd();" class="w3-btn w3-black"> No </a> <!-- no button (+1 upset stomach)-->
 			
     	</div>
 </div>
@@ -128,8 +128,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<div id="content" class="w3-container">
 		<p>Do you experience any pain at night?</p> <!-- question 2 -->
 
-		<a href="#three" onclick="upsetAdd();" class="w3-btn w3-black"> Yes </a> <!-- yes button (+1 cold)-->
-			<a href="#three" onclick="ibsAdd();" class="w3-btn w3-black"> No </a> <!-- no button (+1 allergy)-->
+		<a href="#three" onclick="upsetAdd();" class="w3-btn w3-black"> Yes </a> <!-- yes button (+1 upset stomach)-->
+			<a href="#three" onclick="ibsAdd();" class="w3-btn w3-black"> No </a> <!-- no button (+1 IBS)-->
 		
 	</div>
 </div>	
@@ -142,8 +142,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<div id="content" class="w3-container">
 		<p>Do you have a fever?</p> <!-- question 3 -->
 
-		<a href="#four" onclick="upsetAdd();" class="w3-btn w3-black"> Yes </a> <!-- yes button (+1 cold)-->
-			<a href="#four" onclick="ibsAdd();" class="w3-btn w3-black"> No </a> <!-- no button (+1 allergy)-->
+		<a href="#four" onclick="upsetAdd();" class="w3-btn w3-black"> Yes </a> <!-- yes button (+1 upset stomach)-->
+			<a href="#four" onclick="ibsAdd();" class="w3-btn w3-black"> No </a> <!-- no button (+1 IBS)-->
 		
 	</div>
 </div>	
@@ -156,8 +156,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<div id="content" class="w3-container">
 		<p>Where is your abdominal pain?</p> <!-- question 4 -->
 
-		<a href="#results" onclick="ibsAdd();" class="w3-btn w3-black"> Lower Abdominal </a> <!-- yes button (+1 allergy)-->
-			<a href="#results" onclick="upsetAdd();" class="w3-btn w3-black"> Upper Abdominal </a> <!-- no button (+1 cold)-->
+		<a href="#results" onclick="ibsAdd();" class="w3-btn w3-black"> Lower Abdominal </a> <!-- yes button (+1 IBS)-->
+			<a href="#results" onclick="upsetAdd();" class="w3-btn w3-black"> Upper Abdominal </a> <!-- no button (+1 upset stomach)-->
 		
 	</div>
 </div>	
