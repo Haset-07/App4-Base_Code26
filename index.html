@@ -38,7 +38,31 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <script>
 
-	//YOUR JAVASCRIPT GOES HERE
+	<script>
+        var ibs_count = 0;
+        var upset_count = 0;
+
+
+        function ibsAdd(){
+            ibs_count = ibs_count + 1;
+		alert(ibs_count);
+
+        }
+
+        function upsetAdd(){
+            upset_count = upset_count + 1;
+        }
+		function showresults (){ //function i used to show results at end of questions
+			var total= ibs_count + upset_count; // total adds up the counts for cold and allergy
+			var ibspercentage = (ibs_count/total) * 100; //allergypercentage is the allergy count divided by total times 100, showing the % chance  you have allergies
+			var upsetpercentage = (upset_count/total) * 100;// coldpercentage is the same except it's for colds.
+
+			var resultText = document.getElementById("resultText"); // looks for whatever resultText is
+			resultText.innerHTML = "Probability it is Irritable Bowel Syndrome =" + ibspercentage + "%" + "<br> Probability it is an upset stomach =" + upsetpercentage + "%"; //establishes what resultText is
+
+		}
+			
+  </script>
 
 </script>	
 
@@ -69,7 +93,93 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <body>
 	
 	<!-- HERE IS WHERE ALL OF YOUR HTML PAGES GO -->
-	REPLACE THIS TEXT
+	<div id="header" class="w3-container w3-flat-carrot">
+	<h1>IBS or an Upset Stomach?</h1>
+</div>
+	
+<div id="content" class="w3-container">
+	<p>Have you been experiencing stomach problems and want see if there's an underlying issue? Answer a few short questions to find out!</p>
+	
+	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+	
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+</div> <!-- adding this because it seems to be missing????? -->
+<div class="page" id="one"> <!--setting up page 1 and giving it ID -->
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 1</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+        <p>Have you had stomach issues frequently?/p>     <!--first question-->
+			
+			<a href="#two" onclick="ibsAdd();" class="w3-btn w3-black"> Yes </a> <!-- yes button (+1 allergy)-->
+			<a href="#two" onclick="upsetAdd();" class="w3-btn w3-black"> No </a> <!-- no button (+1 cold)-->
+			
+    	</div>
+</div>
+
+<div class="page" id="two"> <!--setting up page 2 and giving it ID -->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 2</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do you experience any pain at night?</p> <!-- question 2 -->
+
+		<a href="#three" onclick="upsetAdd();" class="w3-btn w3-black"> Yes </a> <!-- yes button (+1 cold)-->
+			<a href="#three" onclick="ibsAdd();" class="w3-btn w3-black"> No </a> <!-- no button (+1 allergy)-->
+		
+	</div>
+</div>	
+
+<div class="page" id="three"> <!--setting up page 3 and giving it ID -->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do you have a fever?</p> <!-- question 3 -->
+
+		<a href="#four" onclick="upsetAdd();" class="w3-btn w3-black"> Yes </a> <!-- yes button (+1 cold)-->
+			<a href="#four" onclick="ibsAdd();" class="w3-btn w3-black"> No </a> <!-- no button (+1 allergy)-->
+		
+	</div>
+</div>	
+
+<div class="page" id="four"> <!--setting up page 4 and giving it ID -->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 4</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Where is your abdominal pain?</p> <!-- question 4 -->
+
+		<a href="#results" onclick="ibsAdd();" class="w3-btn w3-black"> Lower Abdominal </a> <!-- yes button (+1 allergy)-->
+			<a href="#results" onclick="upsetAdd();" class="w3-btn w3-black"> Upper Abdominal </a> <!-- no button (+1 cold)-->
+		
+	</div>
+</div>	
+
+	<div class="page" id="results"> <!--setting up page 5 (results) and giving it ID -->
+		<div class="w3-container w3-flat-carrot">
+		<h1>Results</h1>
+	</div>
+	<div id="content" class="w3-container">
+		<p>Results!</p> <!-- results page -->
+
+		<p id="resultText"></p>
+		<a href="#results" onclick="showresults();" class="w3-btn w3-black"> See Your Results </a> <!--makes results show up once you 
+		click the show results button-->
+		
+	</div>
+</div>	
+		
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY!</p>
+</footer>
+
 	
 </body>
 </html>
